@@ -21,6 +21,7 @@ struct VerticalSpeed: View {
                 .offset(x: 0, y: 60.0)
                 .multilineTextAlignment(.center)
                 .frame(width: geoWidth, height: geoHeight, alignment: .center).padding()
+            //İbreye hız değişkeni ve programın çerçevesine göre değişmesi için çerçeve boyutu verilmiştir.
             VerticalNeedleView(angle: speed, geoWidth: geoWidth, geoHeight: geoHeight)
         }
     }

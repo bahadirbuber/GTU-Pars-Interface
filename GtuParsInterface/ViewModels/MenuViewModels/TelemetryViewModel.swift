@@ -34,6 +34,7 @@ final class TelemetryViewModel: ObservableObject {
         //getDroneTelemetry() içinde tutulması istenen değerler RXSwift ve MAVSDK-Swift kullanılarak Published değerlere aktarılmıştır.
         drone.telemetry.position
             .observeOn(MainScheduler.instance)
+            //subcribe ile pozisyondaki değişkenlikleri kendi değişkenimize atıyoruz.
             .subscribe(onNext: { (position) in
                 self.altitude = Double(position.relativeAltitudeM)
             })

@@ -29,6 +29,7 @@ struct AirNeedleView: View {
                 }.rotationEffect(Angle(degrees: 0)).animation(.easeInOut)
                 .position(x: geometry.size.width / 2, y: geometry.size.height / 1.83)
             }
+            //View'a gelen dereceye göre animasyonlu olarak ibre döndüruldü.
             .rotationEffect(Angle(degrees: (30*7.22))).animation(.easeInOut)
         }else{
             GeometryReader { geometry in
@@ -47,6 +48,7 @@ struct AirNeedleView: View {
                 
                 .position(x: geometry.size.width / 2, y: geometry.size.height / 1.83)
             }
+            //View'a gelen dereceye göre animasyonlu olarak ibre döndüruldü.
             .rotationEffect(Angle(degrees: (angle*7.22))).animation(.easeInOut)
         }
     }

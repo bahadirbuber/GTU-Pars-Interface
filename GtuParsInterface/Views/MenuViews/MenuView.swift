@@ -8,9 +8,10 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var telemetry = TelemetryViewModel() // View-Model View'la bağlanmıştır.
-    var geoWidth: CGFloat
+    var geoWidth: CGFloat // çerçeve büyüklüklerini aldık.
     var geoHeight: CGFloat
     var body: some View {
+        //HStack ve VStack ile Basic T düzeni sağlanmıştır.
             HStack{
                 VStack{
                     //Hız Göstergesi

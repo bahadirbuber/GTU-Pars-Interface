@@ -17,11 +17,13 @@ struct VerticalNeedleView: View {
             GeometryReader { geometry in
                 ZStack
                 {
+                    //İbreye çerçeve atandı ve yeri ayarlandı.
                     Image("verticalNeedle")
                         .resizable(capInsets: EdgeInsets())
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geoWidth/15, height: geoHeight/15,alignment: .center).padding()
                         .offset(x: -geoWidth/5, y: -geoHeight/17)
+                    //İbreye yuvarlak eklendi ve yeri ayarlandı.
                     Circle()
                         .frame(width: geometry.size.width / 35)
                         .offset(x: 2, y: -23.0)
@@ -33,11 +35,13 @@ struct VerticalNeedleView: View {
             GeometryReader { geometry in
                 ZStack
                 {
+                    //İbreye çerçeve atandı ve yeri ayarlandı.
                     Image("verticalNeedle")
                         .resizable(capInsets: EdgeInsets())
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geoWidth/15, height: geoHeight/15,alignment: .center).padding()
                         .offset(x: -geoWidth/5, y: -geoHeight/17)
+                    //İbreye yuvarlak eklendi ve yeri ayarlandı.
                     Circle()
                         .frame(width: geometry.size.width / 35)
                         .offset(x: 2, y: -23.0)
@@ -51,11 +55,13 @@ struct VerticalNeedleView: View {
             GeometryReader { geometry in
                 ZStack
                 {
+                    //İbreye çerçeve atandı ve yeri ayarlandı.
                     Image("verticalNeedle")
                         .resizable(capInsets: EdgeInsets())
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geoWidth/15, height: geoHeight/15,alignment: .center).padding()
                         .offset(x: -geoWidth/5, y: -geoHeight/17)
+                    //İbreye yuvarlak eklendi ve yeri ayarlandı.
                     Circle()
                         .frame(width: geometry.size.width / 35)
                         .offset(x: 2, y: -23.0)
@@ -63,7 +69,8 @@ struct VerticalNeedleView: View {
                 }.rotationEffect(Angle(degrees: 0)).animation(.easeInOut)
                 .position(x: geometry.size.width / 2, y: geometry.size.height / 1.83)
             }
-            .rotationEffect(Angle(degrees: angle*10))
+            //View'a gelen dereceye göre animasyonlu olarak ibre döndüruldü.
+            .rotationEffect(Angle(degrees: angle*10)).animation(.easeInOut)
         }
     }
 }

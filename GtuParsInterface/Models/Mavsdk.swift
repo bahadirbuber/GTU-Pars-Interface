@@ -10,6 +10,7 @@ import Mavsdk
 import RxSwift
 
 let MavScheduler = ConcurrentDispatchQueueScheduler(qos: .default)
+//Programın multithread çalışması için RXSwift fonksiyonu kullanıldı.
 
 class Mavsdk: ObservableObject {
     //Sınıfın ObservableObject olması değişkenleri gözlemlenebilir yapıyor.

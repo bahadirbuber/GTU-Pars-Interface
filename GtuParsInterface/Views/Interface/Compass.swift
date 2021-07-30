@@ -18,6 +18,7 @@ struct Compass: View {
                 .resizable(capInsets: EdgeInsets())
                 .aspectRatio(contentMode: .fill)
                 .frame(width: geoWidth, height: geoHeight,alignment: .center).padding()
+            //Uçak fotoğrafı küçültülmüştür.
             Image("PlaneForCompass")
                 .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
                 .aspectRatio(contentMode: .fit)

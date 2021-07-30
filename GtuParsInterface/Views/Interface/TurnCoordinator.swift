@@ -17,6 +17,7 @@ struct TurnCoordinator: View {
                 .resizable(capInsets: EdgeInsets())
                 .aspectRatio(contentMode: .fill)
                 .frame(width: geoWidth, height: geoHeight,alignment: .center).padding()
+            //Koşula bağlı olarak değişken View gösteriyoruz.
             if(rollAngle > 20){
                 Image("turnPlane")
                     .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)

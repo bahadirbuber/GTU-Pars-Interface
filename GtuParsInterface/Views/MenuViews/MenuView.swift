@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var telemetry = TelemetryViewModel()
+    @ObservedObject var telemetry = TelemetryViewModel() // View-Model View'la bağlanmıştır.
     var geoWidth: CGFloat
     var geoHeight: CGFloat
     var body: some View {

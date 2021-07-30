@@ -14,6 +14,7 @@ struct Altitude: View {
     let altitude: Double
     var body: some View {
         ZStack{
+            //Gösterge ile  ibre farklı Viewlardır.
             Image("altitude")
                 .resizable(capInsets: EdgeInsets())
                 .aspectRatio(contentMode: .fill)

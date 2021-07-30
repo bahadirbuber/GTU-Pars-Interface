@@ -12,7 +12,7 @@ struct VerticalNeedleView: View {
     let geoWidth:CGFloat
     let geoHeight: CGFloat
     var body: some View {
-        
+        //Düşey hız 18'i geçtiğinde View bozulmaması için koşulla düzeltilmiştir.
         if (angle*10 > 180) {
             GeometryReader { geometry in
                 ZStack

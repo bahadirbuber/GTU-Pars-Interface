@@ -13,6 +13,7 @@ struct AirNeedleView: View {
     let geoWidth:CGFloat
     let geoHeight: CGFloat
     var body: some View {
+        //30 değerini geçmemesi için açı hesaplanıp maximum halinde 30 göstermesi sağlanmıştır.
         if (angle*7.22 > 30) {
             GeometryReader { geometry in
                 ZStack

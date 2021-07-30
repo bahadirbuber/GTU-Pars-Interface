@@ -21,14 +21,17 @@ final class TelemetryViewModel: ObservableObject {
     @Published private(set) var flightMode = "-"
     @Published private(set) var gpsNum = 0
     
-    lazy var drone = Mavsdk.sharedInstance.drone
+    //Gözlemlenebilir değer olması için değişkenler @Published olarak gösterilmiştir.
+    lazy var drone = Mavsdk.sharedInstance.drone //Model View-Model'a bağlanmıştır.
     let disposeBag = DisposeBag()//RxSwift Dispose Bag
     
     init() {
         getDroneTelemetry()
+        // init() ile program başladığında program başladığında çalışmasını sağlıyoruz.
     }
     
     func getDroneTelemetry() {
+        //getDroneTelemetry() içinde tutulması istenen değerler RXSwift ve MAVSDK-Swift kullanılarak Published değerlere aktarılmıştır.
         drone.telemetry.position
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (position) in
@@ -42,10 +45,11 @@ final class TelemetryViewModel: ObservableObject {
                 self.battery = Double(info.remainingPercent * 100)
             })
             .disposed(by: disposeBag)
-        
+        //Batarya kullanılmamasına rağmen alabiliyoruz.
         drone.telemetry.attitudeEuler
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (angle) in
+                //Uçağın açılarını alıyoruz.
                 self.rollAngle = Double(angle.rollDeg)
                 self.yawAngle = Double(angle.yawDeg)
                 self.pitchAngle = Double(angle.pitchDeg)
@@ -53,23 +57,11 @@ final class TelemetryViewModel: ObservableObject {
         drone.telemetry.fixedwingMetrics
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (metrics) in
+                //uçağın hızını ve tırmanmasını alıyoruz.
                 self.airspeed = Double(metrics.airspeedMS)
                 self.climbRate = Double(metrics.climbRateMS)
             }).disposed(by: disposeBag)
-        drone.telemetry.armed
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { (armed) in
-                self.isArmed = armed
-            })
-            .disposed(by: disposeBag)
-        
-        drone.telemetry.gpsInfo
-            .subscribeOn(MavScheduler)
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { (gps) in
-                self.gpsNum = Int(gps.numSatellites)
-            })
-            .disposed(by: disposeBag)
+
     }
     
 }

@@ -13,6 +13,7 @@ struct Compass: View {
     let yawAngle: Double
     var body: some View {
         ZStack{
+            //Pusula ile uçak farklı resimlerdir.
             Image("compass")
                 .resizable(capInsets: EdgeInsets())
                 .aspectRatio(contentMode: .fill)

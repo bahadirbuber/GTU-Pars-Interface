@@ -12,10 +12,11 @@ import RxSwift
 let MavScheduler = ConcurrentDispatchQueueScheduler(qos: .default)
 
 class Mavsdk: ObservableObject {
+    //Sınıfın ObservableObject olması değişkenleri gözlemlenebilir yapıyor.
     static let sharedInstance = Mavsdk()
     var drone: Drone
     private init() {
         drone = Drone(address: "0.0.0.0",port: 50051)
-        //Droneu başlatmak için gerekli kod
+        //Programı başlatırken Model ile Mavsdk Server'a bağlanıyoruz.
     }
 }

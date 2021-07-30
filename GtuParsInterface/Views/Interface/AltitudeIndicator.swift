@@ -14,6 +14,7 @@ struct AltitudeIndicator: View {
     let rollAngle: Double
     var body: some View {
         ZStack{
+            //Altitude Indicator üç farklı fotoğrafa bölünüp View gösterilmiştir.
             Image("IndicatorBackground")
                 .resizable(capInsets: EdgeInsets())
                 .aspectRatio(contentMode: .fill)
@@ -26,7 +27,6 @@ struct AltitudeIndicator: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: geoWidth, height: geoHeight, alignment: .center).padding()
                 .rotationEffect(Angle(degrees: rollAngle)).animation(.easeInOut)
-                
             Image("attitudeIndicator")
                 .resizable(capInsets: EdgeInsets())
                 .aspectRatio(contentMode: .fill)
